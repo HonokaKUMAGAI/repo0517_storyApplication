@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    <title> Creiamo Una Storia Originale</title>
+</head>
+
+<body>
+    <h1>Creiamo Una Storia Originale</h1>
+    <h4>オリジナルの童話を作ろう</h4>
+    <p>このサイトは、あなたの入力した情報と、あなたの選んだ道から、自分だけの童話を作れます。
+        <br>素敵な物語を作りましょう！
+    </p>
+
+    <h3 th:text="${greeting}">ここにはご挨拶が入ります</h3>
+    <h3 th:text="'ようこそ' + ${user.name} + 'さん！'"></h3>
+
+    <form th:action="@{/submit-profile}" th:object="${profileValidated}" method="post">
+		
+        <div>
+            <label for="nickname">ニックネーム</label><br>
+            <input type="text" id="nickname" th:field="*{nickname}"><br><br>
+<!--            <div th:if="${#fields.hasErrors('nickname')}" th:errors="*{nickname}" style="color: rgb(183, 0, 91);"></div>-->
+        </div>
+
+        <div>
+            <label for="age">年齢</label><br>
+            <input type="number" id="age" th:field="*{age}"><br><br>
+<!--            <div th:if="${#fields.hasErrors('age')}" th:errors="*{age}" style="color: rgb(183, 0, 91);"></div>-->
+        </div>
+
+        <div>
+            <label for="address">お気に入りの都市</label><br>
+			<input type="number" id="address" th:field="*{address}"><br><br>
+<!--            <div th:if="${#fields.hasErrors('address')}" th:errors="*{address}" style="color: rgb(183, 0, 91);"></div>-->
+        </div>
+
+        <div>
+            <label for="favfood">お気に入りの食べ物</label><br>
+            <input type="text" id="favfood" th:field="favfood"><br><br>
+<!--            <div th:if="${#fields.hasErrors('favfood')}" th:errors="*{favfood}" style="color: rgb(183, 0, 91);"></div>-->
+        </div>
+
+        <div>
+            <label for="hobby">趣味</label><br>
+            <input type="text" id="hobby" th:field="hobby"><br><br>
+<!--            <div th:if="${#fields.hasErrors('hobby')}" th:errors="*{hobby}" style="color: rgb(183, 0, 91);"></div>-->
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+</html>

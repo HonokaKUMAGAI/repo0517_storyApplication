@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+	<title>	Creiamo Una Storia Originale</title>
+</head>
+
+<body>
+	<h1>Creiamo Una Storia Originale</h1>
+	<h4>オリジナルの童話を作ろう</h4>
+
+
+	<h2>確認画面</h2>
+	<p>ニックネームは<span th:text="${nickname}"></span>です。</p>
+	<p>年齢は<span th:text="${age}"></span>歳です。</p>
+	<p>好きな都市は<span th:text="${address}"></span>です。</p>
+	<p>好きな食べ物は<span th:text="${favfood}"></span>です。</p>
+	<p>趣味は<span th:text="${hobby}"></span>です。</p>
+	<form action="/story_start" method="post">
+		<input type="hidden" name="nickname" th:value="${nickname}">
+		<input type="hidden" name="age" th:value="${age}">
+		<input type="hidden" name="address" th:value="${address}">
+		<input type="hidden" name="favfood" th:value="${favfood}">
+		<input type="hidden" name="hobby" th:value="${hobby}">
+		<input type="submit" value="これでOK！">
+	</form>
+</body>
+
+</html>
